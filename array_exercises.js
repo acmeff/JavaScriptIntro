@@ -11,12 +11,12 @@ const uniq = (array) => {
 
 // console.log(uniq([1, 2, 1, 3, 3]));
 
-const twoSum = (array) => {
+Array.prototype.twoSum = function() {
   let indices = [];
-  for (let i = 0; i < array.length; i++) {
-    let el1 = array[i];
-    for (let j = i + 1; j < array.length; j++) {
-      let el2 = array[j];
+  for (let i = 0; i < this.length; i++) {
+    let el1 = this[i];
+    for (let j = i + 1; j < this.length; j++) {
+      let el2 = this[j];
       if (el1 + el2 === 0) {
         indices.push([i, j]);
       }
@@ -37,7 +37,7 @@ const twoSum = (array) => {
   // return indices;
 };
 
-// console.log(twoSum([-1, 0, 2, -2, 1]));
+console.log([-1, 0, 2, -2, 1].twoSum());
 
 
 const transpose = (array) => {
@@ -120,12 +120,12 @@ const bubbleSort = (array) => {
 
 // console.log(bubbleSort([2,1,6,5]));
 
-const subString = (string) => {
+String.prototype.subString = function() {
   let substrs = [];
-  for (var i = 0; i < string.length; i++) {
-    // let char = string[i];
-    for (var j = 0; j < string.length; j++) {
-      let substr = string.slice(i, j + 1);
+  for (var i = 0; i < this.length; i++) {
+    // let char = this[i];
+    for (var j = 0; j < this.length; j++) {
+      let substr = this.slice(i, j + 1);
       if (substr) {
         substrs.push(substr);
       }
@@ -134,4 +134,4 @@ const subString = (string) => {
   return substrs;
 };
 
-console.log(subString("Hello"));
+console.log("Hello".subString());
